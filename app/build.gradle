@@ -1,0 +1,50 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    namespace = 'com.pseudoman21.ytauto'
+    compileSdk = 36
+
+    defaultConfig {
+        applicationId = 'com.pseudoman21.ytauto'
+        minSdk = 28
+        targetSdk = 36
+        versionCode = 1
+        versionName = '1.0'
+    }
+
+    signingConfigs {
+        // CI passes a fixed keystore via env vars so every build has the same signature
+        // and installs over the previous one. Locally this falls back to the debug key.
+        if (System.getenv('SIGNING_KEYSTORE')) {
+            ci {
+                storeFile = file(System.getenv('SIGNING_KEYSTORE'))
+                storePassword = System.getenv('SIGNING_STORE_PASSWORD')
+                keyAlias = System.getenv('SIGNING_KEY_ALIAS')
+                keyPassword = System.getenv('SIGNING_KEY_PASSWORD')
+            }
+        }
+    }
+
+    buildTypes {
+        release {
+            // The AA SDK and the JS bridge rely on reflection/obfuscated names; keep it simple.
+            minifyEnabled = false
+            // Sideload-only app: sign release with the debug key so `assembleRelease` is installable.
+            signingConfig = signingConfigs.findByName('ci') ?: signingConfigs.debug
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+}
+
+dependencies {
+    // Unofficial Android Auto SDK (CarActivity / CarActivityService), taken from Fermata.
+    implementation files('libs/aauto.aar')
+    implementation 'androidx.appcompat:appcompat:1.8.0'
+    implementation 'androidx.media:media:1.8.0'
+}

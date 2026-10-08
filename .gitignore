@@ -4,3 +4,6 @@ local.properties
 .idea/
 *.iml
 .DS_Store
+
+# Raw source image; the app uses the cropped copy in res/drawable-nodpi
+app/IMG_2063.JPG

@@ -11,16 +11,18 @@ import androidx.appcompat.app.AppCompatActivity;
  */
 public class PhoneActivity extends AppCompatActivity {
 	private Player player;
+	private About about;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.player);
 		player = new Player(findViewById(R.id.web), findViewById(R.id.fullscreen), null, false);
+		about = new About(findViewById(R.id.web).getRootView());
 		getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
 			@Override
 			public void handleOnBackPressed() {
-				if (player.onBack()) return;
+				if (about.onBack() || player.onBack()) return;
 				setEnabled(false);
 				getOnBackPressedDispatcher().onBackPressed();
 			}

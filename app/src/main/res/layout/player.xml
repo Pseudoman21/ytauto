@@ -16,4 +16,24 @@
         android:background="@android:color/black"
         android:visibility="gone" />
 
+    <!-- Faint watermark, also the way into the About page. Stays above fullscreen video. -->
+    <TextView
+        android:id="@+id/watermark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:alpha="0.3"
+        android:background="?android:attr/selectableItemBackground"
+        android:padding="8dp"
+        android:shadowColor="@android:color/black"
+        android:shadowRadius="3"
+        android:text="@string/watermark"
+        android:textColor="@android:color/white"
+        android:textSize="11sp" />
+
+    <include
+        android:id="@+id/about"
+        layout="@layout/about"
+        android:visibility="gone" />
+
 </FrameLayout>

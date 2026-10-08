@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">YT Auto</string>
+    <string name="watermark">Kasangga Vlogs</string>
+    <string name="about_title">About YT Auto</string>
+    <string name="about_body">YT Auto brings YouTube to your car\'s Android Auto screen. It was built to help everyone enjoy videos on their dashboard: search, play, and control videos with the touchscreen or your steering wheel buttons. It\'s free, simple, and made for passengers and parked drivers alike.</string>
+    <string name="about_drive_safe">Please drive safe. Keep your eyes on the road and only watch while parked.</string>
+    <string name="about_thanks">Want to say thanks? Scan to send a tip via GCash 🙏</string>
+    <string name="about_qr_desc">GCash QR code for sending thanks</string>
+    <string name="channel_url">https://www.youtube.com/@KasanggaVlogs</string>
+    <string name="about_channel">▶ youtube.com/@KasanggaVlogs</string>
+    <string name="about_close">Close</string>
 </resources>

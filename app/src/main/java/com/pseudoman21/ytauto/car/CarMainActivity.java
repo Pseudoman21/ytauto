@@ -6,6 +6,7 @@ import android.view.ViewGroup;
 
 import com.google.android.apps.auto.sdk.CarActivity;
 import com.google.android.apps.auto.sdk.CarUiController;
+import com.pseudoman21.ytauto.About;
 import com.pseudoman21.ytauto.Player;
 import com.pseudoman21.ytauto.R;
 import com.pseudoman21.ytauto.YtWebView;
@@ -15,6 +16,7 @@ import com.pseudoman21.ytauto.YtWebView;
  */
 public class CarMainActivity extends CarActivity implements YtWebView.TextInput {
 	private Player player;
+	private About about;
 	private CarEditText editText;
 
 	@Override
@@ -27,6 +29,7 @@ public class CarMainActivity extends CarActivity implements YtWebView.TextInput 
 		setContentView(R.layout.player);
 		player = new Player((YtWebView) findViewById(R.id.web),
 				(ViewGroup) findViewById(R.id.fullscreen), this, true);
+		about = new About(findViewById(R.id.web).getRootView());
 	}
 
 	@Override
@@ -38,13 +41,13 @@ public class CarMainActivity extends CarActivity implements YtWebView.TextInput 
 
 	@Override
 	public void onBackPressed() {
-		if (!player.onBack()) super.onBackPressed();
+		if (!about.onBack() && !player.onBack()) super.onBackPressed();
 	}
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {
 		if (player.onMediaKey(event)) return true;
-		if ((keyCode == KeyEvent.KEYCODE_BACK) && player.onBack()) return true;
+		if ((keyCode == KeyEvent.KEYCODE_BACK) && (about.onBack() || player.onBack())) return true;
 		return super.onKeyDown(keyCode, event);
 	}
 

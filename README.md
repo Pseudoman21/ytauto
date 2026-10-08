@@ -4,6 +4,17 @@ YouTube on the Android Auto screen, and nothing else. A stripped-down take on th
 from [Fermata](https://github.com/AndreyPavlenko/Fermata): it opens straight to `m.youtube.com`,
 with no media library, addons or settings.
 
+[![Download APK](https://img.shields.io/github/v/release/Pseudoman21/ytauto?label=Download%20APK&logo=android&style=for-the-badge)](https://github.com/Pseudoman21/ytauto/releases/latest)
+[![YouTube](https://img.shields.io/badge/YouTube-Kasangga%20Vlogs-FF0000?logo=youtube&style=for-the-badge)](https://www.youtube.com/@KasanggaVlogs)
+
+## Download
+
+Get the latest APK from the **[Releases page](https://github.com/Pseudoman21/ytauto/releases/latest)**
+(open it on your phone, tap `YTAuto-v….apk` under **Assets**), then follow
+[Install and enable in Android Auto](#install-and-enable-in-android-auto) below.
+
+⚠️ **Please drive safe.** Keep your eyes on the road and only watch while parked.
+
 ## How it works
 
 - `YtWebView` loads m.youtube.com and injects a script that reports the `<video>` state
@@ -27,7 +38,8 @@ export ANDROID_HOME=/opt/homebrew/share/android-commandlinetools   # or your SDK
 
 ## Install and enable in Android Auto
 
-1. `adb install app/build/outputs/apk/release/app-release.apk` (or copy the APK over and sideload it).
+1. Download the APK from [Releases](https://github.com/Pseudoman21/ytauto/releases/latest) on your phone and open it
+   to install (allow installing from your browser if asked). Or `adb install` it from a computer.
 2. Open **YT Auto** on the phone once and sign in to YouTube (optional).
 3. Android Auto settings → tap **Version** about 10 times to unlock developer settings →
    ⋮ menu → **Developer settings** → enable **Unknown sources**.

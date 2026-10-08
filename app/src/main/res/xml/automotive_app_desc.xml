@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<automotiveApp>
+<!-- Same declarations as Fermata's Android Auto build. "projection" and "service" make Android Auto
+     list the app as a projection app (CarService draws its own UI); "media" alone hides it, since
+     there's no MediaBrowserService behind it. -->
+<automotiveApp xmlns:tools="http://schemas.android.com/tools">
     <uses name="media" />
+    <uses
+        name="service"
+        tools:ignore="InvalidUsesTagAttribute" />
+    <uses
+        name="projection"
+        tools:ignore="InvalidUsesTagAttribute" />
 </automotiveApp>

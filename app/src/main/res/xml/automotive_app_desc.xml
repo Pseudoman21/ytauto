@@ -4,6 +4,8 @@
      there's no MediaBrowserService behind it. -->
 <automotiveApp xmlns:tools="http://schemas.android.com/tools">
     <uses name="media" />
+    <!-- Car App Library (YtCarAppService). Android Auto doesn't list a CarAppService without it. -->
+    <uses name="template" />
     <uses
         name="service"
         tools:ignore="InvalidUsesTagAttribute" />

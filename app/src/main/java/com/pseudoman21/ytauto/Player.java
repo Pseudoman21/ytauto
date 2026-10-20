@@ -123,6 +123,11 @@ public final class Player implements YtWebView.Listener {
 		return false;
 	}
 
+	public void home() {
+		web.exitFullScreen();
+		web.loadUrl(YtWebView.HOME);
+	}
+
 	public boolean onMediaKey(KeyEvent e) {
 		switch (e.getKeyCode()) {
 			case KeyEvent.KEYCODE_MEDIA_PLAY, KeyEvent.KEYCODE_MEDIA_PAUSE,

@@ -10,8 +10,8 @@ android {
         applicationId = 'com.pseudoman21.ytauto'
         minSdk = 28
         targetSdk = 36
-        versionCode = 2
-        versionName = '1.1'
+        versionCode = 3
+        versionName = '1.2'
     }
 
     signingConfigs {
@@ -47,4 +47,6 @@ dependencies {
     implementation files('libs/aauto.aar')
     implementation 'androidx.appcompat:appcompat:1.8.0'
     implementation 'androidx.media:media:1.8.0'
+    // Official Car App Library: navigation template + surface, used by YtCarAppService.
+    implementation 'androidx.car.app:app:1.4.0'
 }
